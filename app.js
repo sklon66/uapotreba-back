@@ -1,5 +1,6 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const express = require('express');
+const cors = require('cors');
 
 const bootstrap = async () => {
     const doc = new GoogleSpreadsheet('1BCaKRTxqgkiO3OHIBH7CSIiVLRseIUG6vzUu_AmgUlg');
@@ -100,6 +101,8 @@ const bootstrap = async () => {
 
         return {citiesInfo, allProducts}
     };
+
+    app.use(cors());
 
     app.get('/', async (req, res) => {
         const info = await getInfoFromSheet();

@@ -105,6 +105,10 @@ const bootstrap = async () => {
         const info = await getInfoFromSheet();
         res.json(info);
     })
+
+    app.get('/hc', (req, res) => {
+        res.send("alive");
+    })
     
     app.listen(port, () => {
         console.log(`App listening on port ${port}`);

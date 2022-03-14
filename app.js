@@ -24,7 +24,7 @@ const bootstrap = async () => {
             const contacts = await doc.sheetsByIndex[4];
             await contacts.loadCells('A1:E28');
             const category = doc.sheetsByIndex[5];
-            await category.loadCells('B4:B21');
+            await category.loadCells('B3:B21');
             const rows = await mainSheet.getRows();
             // rows[0]._sheet.headerValues.forEach((e, i) => {
             //     console.log(e, i);
@@ -93,12 +93,13 @@ const bootstrap = async () => {
                     })
                 }
             }
-            category._cells.shift(3)
+            category._cells.shift()
+            category._cells.shift()
+            category._cells.shift()
             category._cells.forEach(e => allProducts.push(e[1].value));
         } catch (error) {
             console.log(error);
         }
-
         return {citiesInfo, allProducts}
     };
 

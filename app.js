@@ -21,10 +21,10 @@ const bootstrap = async () => {
         try {
             await doc.loadInfo();
             const mainSheet = doc.sheetsByIndex[0];
-            const contacts = await doc.sheetsByIndex[2];
+            const contacts = await doc.sheetsByIndex[4];
             await contacts.loadCells('A1:E28');
-            const category = doc.sheetsByIndex[3];
-            await category.loadCells('B3:B21');
+            const category = doc.sheetsByIndex[5];
+            await category.loadCells('B4:B21');
             const rows = await mainSheet.getRows();
             // rows[0]._sheet.headerValues.forEach((e, i) => {
             //     console.log(e, i);

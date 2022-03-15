@@ -40,28 +40,28 @@ const bootstrap = async () => {
                         citiesInfo[rI]?.cities[sI]?.needs.push({
                             name: row["Category UA"],
                             productNeed: +row["Score name city-category"]?.replace(",", ""),
-                            productNeedVolume1D: +row["Stock needed for 1 day, kg"]?.replace(",", "") || 0,
+                            productNeedVolume1D: +row["Stock needed for 1 day, tons"]?.replace(",", "") || 0,
                             optProductNeedVolume: +row["Missing needed stock, tons"]?.replace(",", "") || 0
                         });
-                        citiesInfo[rI].cities[sI].cityNeedVolume1D += +row["Stock needed for 1 day, kg"]?.replace(",", "") || 0;
+                        citiesInfo[rI].cities[sI].cityNeedVolume1D += +row["Stock needed for 1 day, tons"]?.replace(",", "") || 0;
                         citiesInfo[rI].cities[sI].optCityNeedVolume += +row["Missing needed stock, tons"]?.replace(",", "") || 0;
-                        citiesInfo[rI].regNeedVolume1D += +row["Stock needed for 1 day, kg"]?.replace(",", "") || 0;
+                        citiesInfo[rI].regNeedVolume1D += +row["Stock needed for 1 day, tons"]?.replace(",", "") || 0;
                         citiesInfo[rI].optRegNeedVolume += +row["Missing needed stock, tons"]?.replace(",", "") || 0;
                     } else {
                         citiesInfo[rI]?.cities.push({
                             name: row["City UA"],
                             blocked: row["City State"],
                             cityNeed: +row["Score name city"]?.replace(",", ""),
-                            cityNeedVolume1D: +row["Stock needed for 1 day, kg"]?.replace(",", "") || 0,
+                            cityNeedVolume1D: +row["Stock needed for 1 day, tons"]?.replace(",", "") || 0,
                             optCityNeedVolume: +row["Missing needed stock, tons"]?.replace(",", "") || 0,
                             needs: [{
                                 name: row["Category UA"],
                                 productNeed: +row["Score name city-category"]?.replace(",", ""),
-                                productNeedVolume1D: +row["Stock needed for 1 day, kg"]?.replace(",", "") || 0,
+                                productNeedVolume1D: +row["Stock needed for 1 day, tons"]?.replace(",", "") || 0,
                                 optProductNeedVolume: +row["Missing needed stock, tons"]?.replace(",", "") || 0
                             }]
                         })
-                        citiesInfo[rI].regNeedVolume1D += +row["Stock needed for 1 day, kg"]?.replace(",", "") || 0;
+                        citiesInfo[rI].regNeedVolume1D += +row["Stock needed for 1 day, tons"]?.replace(",", "") || 0;
                         citiesInfo[rI].optRegNeedVolume += +row["Missing needed stock, tons"]?.replace(",", "") || 0;
                     }
                 } else {
@@ -69,7 +69,7 @@ const bootstrap = async () => {
                     citiesInfo.push({
                         region: row.Region,
                         regionNeed: +row["Score name region"].replace(",", ""),
-                        regNeedVolume1D: +row["Stock needed for 1 day, kg"].replace(",", "") || 0,
+                        regNeedVolume1D: +row["Stock needed for 1 day, tons"].replace(",", "") || 0,
                         optRegNeedVolume: +row["Missing needed stock, tons"].replace(",", "") || 0,
                         contacts: {
                             phone_VCA: contact[1].value,
@@ -81,12 +81,12 @@ const bootstrap = async () => {
                             name: row["City UA"],
                             blocked: row["City State"],
                             cityNeed: +row["Score name city"].replace(",", ""),
-                            cityNeedVolume1D: +row["Stock needed for 1 day, kg"].replace(",", "") || 0,
+                            cityNeedVolume1D: +row["Stock needed for 1 day, tons"].replace(",", "") || 0,
                             optCityNeedVolume: +row["Missing needed stock, tons"].replace(",", "") || 0,
                             needs: [{
                                 name: row["Category UA"],
                                 productNeed: +row["Score name city-category"].replace(",", ""),
-                                productNeedVolume1D: +row["Stock needed for 1 day, kg"].replace(",", "") || 0,
+                                productNeedVolume1D: +row["Stock needed for 1 day, tons"].replace(",", "") || 0,
                                 optProductNeedVolume: +row["Missing needed stock, tons"].replace(",", "") || 0
                             }]
                         }]

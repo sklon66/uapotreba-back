@@ -96,7 +96,9 @@ const bootstrap = async () => {
             category._cells.shift()
             category._cells.shift()
             category._cells.shift()
-            category._cells.forEach(e => allProducts.push(e[1].value));
+            category._cells.forEach(e => {
+                if(e[1].value) allProducts.push(e[1].value)
+            });
         } catch (error) {
             console.log(error);
         }
